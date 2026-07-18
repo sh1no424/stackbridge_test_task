@@ -1,0 +1,188 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="push-architecture" name="Push architecture">
+    <mxGraphModel dx="2253" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=15;fontColor=#6B7280;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="560" x="520" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="cart" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=2;fontSize=15;fontColor=#0F172A;shadow=1;" value="&lt;b&gt;Cart Service&lt;/b&gt;&lt;br&gt;&lt;font color=&#39;#64748B&#39;&gt;Корзины пользователей&lt;/font&gt;" vertex="1">
+          <mxGeometry height="75" width="180" x="90" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="order" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=2;fontSize=15;fontColor=#0F172A;shadow=1;" value="&lt;b&gt;Order Service&lt;/b&gt;&lt;br&gt;&lt;font color=&#39;#64748B&#39;&gt;Заказы и статусы&lt;/font&gt;" vertex="1">
+          <mxGeometry height="75" width="180" x="230" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="marketing" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#94A3B8;strokeWidth=2;fontSize=15;fontColor=#0F172A;shadow=1;" value="&lt;b&gt;Marketing Service&lt;/b&gt;&lt;br&gt;&lt;font color=&#39;#64748B&#39;&gt;Рекламные кампании&lt;/font&gt;" vertex="1">
+          <mxGeometry height="75" width="180" x="30" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="rabbit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#F97316;strokeWidth=2;fontSize=16;fontColor=#7C2D12;shadow=1;" value="&lt;b&gt;Брокер сообщений&lt;/b&gt;&lt;div&gt;&lt;b&gt;(RabbitMQ или Kafka)&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="210" x="40" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="DJybPEAwdVBZkWdXATLx-11" edge="1" parent="1" source="queue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=1;entryDx=0;entryDy=0;strokeColor=light-dark(#000000,#E1D5E7);" target="scheduler">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="queue" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#FFF7ED;strokeColor=#F97316;strokeWidth=2;fontSize=14;fontColor=#7C2D12;shadow=1;" value="&lt;font color=&quot;#9A3412&quot;&gt;Очередь событий&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="170" x="390" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="notification" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#22C55E;strokeWidth=3;fontSize=17;fontColor=#14532D;shadow=1;" value="&lt;b&gt;Push service&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#75b98f&quot;&gt;формирует пуши и управляет отправкой&lt;/font&gt;" vertex="1">
+          <mxGeometry height="105" width="250" x="675" y="332.5" as="geometry" />
+        </mxCell>
+        <mxCell id="scheduler" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A3A3A3;strokeWidth=2;fontSize=14;fontColor=#1F2937;shadow=1;" value="&lt;b&gt;Scheduler&lt;/b&gt;&lt;br&gt;&lt;font color=&#39;#64748B&#39;&gt;Отложенные проверки&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="435" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="tokens" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#FFFFFF;strokeColor=#65A30D;strokeWidth=2;fontSize=14;fontColor=#365314;" value="&lt;b&gt;База токенов&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="130" x="1020" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="pushQueue" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;fillColor=#ECFDF5;strokeColor=#22C55E;strokeWidth=2;fontSize=14;fontColor=#14532D;shadow=1;" value="&lt;font color=&quot;#166534&quot;&gt;Задания на отправку&lt;/font&gt;" vertex="1">
+          <mxGeometry height="85" width="170" x="715" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="worker" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#22C55E;strokeWidth=2;fontSize=15;fontColor=#14532D;shadow=1;" value="&lt;b&gt;Push Worker&lt;/b&gt;" vertex="1">
+          <mxGeometry height="90" width="170" x="715" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="fcm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;strokeWidth=2;fontSize=16;fontColor=#1E3A8A;shadow=1;" value="&lt;b&gt;FCM&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="130" x="1160" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="apns" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#3B82F6;strokeWidth=2;fontSize=16;fontColor=#1E3A8A;shadow=1;" value="&lt;b&gt;APNs&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="1420" y="725" as="geometry" />
+        </mxCell>
+        <mxCell id="android" parent="1" style="shape=mxgraph.android.phone2;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;strokeWidth=2;fontSize=14;fontColor=#1E3A8A;" value="&lt;b&gt;Android-приложение&lt;/b&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="130" x="1160" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="deviceApi" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#60A5FA;strokeWidth=2;fontSize=14;fontColor=#1E3A8A;shadow=1;" value="&lt;font color=&quot;#81abff&quot;&gt;Сервис управления токенами&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="220" x="1250" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cart_rabbit" edge="1" parent="1" source="cart" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontSize=12;fontColor=#475569;labelBackgroundColor=#FFFFFF;" target="rabbit" value="CartUpdated">
+          <mxGeometry relative="1" x="-0.4837" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="190" y="250" />
+              <mxPoint x="100" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_order_rabbit" edge="1" parent="1" source="order" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontSize=12;fontColor=#475569;labelBackgroundColor=#FFFFFF;" target="rabbit" value="OrderCancelled">
+          <mxGeometry relative="1" x="-0.218" y="3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_marketing_rabbit" edge="1" parent="1" source="marketing" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontSize=12;fontColor=#475569;labelBackgroundColor=#FFFFFF;" target="rabbit" value="CampaignStarted">
+          <mxGeometry relative="1" x="-0.4921" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="120" y="470" />
+              <mxPoint x="120" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_rabbit_queue" edge="1" parent="1" source="rabbit" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#F97316;strokeWidth=2;fontSize=12;fontColor=#9A3412;labelBackgroundColor=#FFF7ED;" target="queue" value="маршрутизация">
+          <mxGeometry relative="1" x="-0.0588" y="2" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="310" y="385" />
+              <mxPoint x="310" y="385" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_queue_notification" edge="1" parent="1" source="queue" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#F97316;strokeWidth=2;fontSize=12;fontColor=#9A3412;labelBackgroundColor=#FFF7ED;" target="notification" value="Событие">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="385.04" />
+              <mxPoint x="580" y="385.04" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_scheduler_notification" edge="1" parent="1" source="scheduler" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#6B7280;strokeWidth=2;fontSize=12;fontColor=#4B5563;labelBackgroundColor=#FFFFFF;" target="notification" value="Отложенный триггер">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="750" y="169.86" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_notification_tokens" edge="1" parent="1" source="notification" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#65A30D;strokeWidth=2;fontSize=11;fontColor=#3F6212;labelBackgroundColor=#F0FDF4;" target="tokens" value="Получить токены">
+          <mxGeometry relative="1" x="-0.1751" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="860" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_notification_pushqueue" edge="1" parent="1" source="notification" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#22C55E;strokeWidth=2;fontSize=12;fontColor=#166534;labelBackgroundColor=#F0FDF4;" target="pushQueue" value="Готовые задания">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_pushqueue_worker" edge="1" parent="1" source="pushQueue" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#22C55E;strokeWidth=2;fontSize=12;fontColor=#166534;labelBackgroundColor=#F0FDF4;" target="worker" value="Забрать задание">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_worker_fcm" edge="1" parent="1" source="worker" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#3B82F6;strokeWidth=2;fontSize=12;fontColor=#1D4ED8;labelBackgroundColor=#EFF6FF;exitX=0.987;exitY=0.37;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.005;entryY=0.326;entryDx=0;entryDy=0;entryPerimeter=0;" target="fcm" value="HTTP API">
+          <mxGeometry relative="1" x="0.0029" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1090.01" y="753.31" />
+              <mxPoint x="1090.01" y="666.07" />
+            </Array>
+            <mxPoint x="890" y="730" as="sourcePoint" />
+            <mxPoint x="1230.0000000000005" y="670.0000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_worker_apns" edge="1" parent="1" source="worker" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#3B82F6;strokeWidth=2;fontSize=12;fontColor=#1D4ED8;labelBackgroundColor=#EFF6FF;" target="apns" value="HTTP API">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_fcm_android" edge="1" parent="1" source="fcm" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#3B82F6;strokeWidth=2;fontSize=12;fontColor=#1D4ED8;labelBackgroundColor=#EFF6FF;entryX=0.209;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.209;exitY=-0.009;exitDx=0;exitDy=0;exitPerimeter=0;" target="android" value="Доставка пуша">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_apns_ios" edge="1" parent="1" source="apns" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#3B82F6;strokeWidth=2;fontSize=12;fontColor=#1D4ED8;labelBackgroundColor=#EFF6FF;entryX=0.307;entryY=1.005;entryDx=0;entryDy=0;entryPerimeter=0;" target="DJybPEAwdVBZkWdXATLx-1" value="Доставка пуша">
+          <mxGeometry relative="1" x="-0.4725" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1440" y="560" />
+              <mxPoint x="1440" y="560" />
+            </Array>
+            <mxPoint x="1280" y="774.9999999999998" as="sourcePoint" />
+            <mxPoint x="1479.9999999999995" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_android_deviceapi" edge="1" parent="1" source="android" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=block;endFill=1;strokeColor=#60A5FA;strokeWidth=2;fontSize=11;fontColor=#1D4ED8;labelBackgroundColor=#EFF6FF;" target="deviceApi" value="">
+          <mxGeometry relative="1" x="0.3" y="-205" as="geometry">
+            <mxPoint x="-45" y="128" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_ios_deviceapi" edge="1" parent="1" source="DJybPEAwdVBZkWdXATLx-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=block;endFill=1;strokeColor=#60A5FA;strokeWidth=2;fontSize=11;fontColor=#1D4ED8;labelBackgroundColor=#EFF6FF;exitX=0.522;exitY=0.004;exitDx=0;exitDy=0;exitPerimeter=0;" target="deviceApi" value="Регистрация / обновление токена">
+          <mxGeometry relative="1" x="0.6471" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="1449.9999999999995" y="410" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_deviceapi_tokens" edge="1" parent="1" source="deviceApi" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#60A5FA;strokeWidth=2;fontSize=11;fontColor=#1D4ED8;labelBackgroundColor=#EFF6FF;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="tokens" value="Сохранить токен устройства и приложения">
+          <mxGeometry relative="1" x="-0.3478" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <Array as="points">
+              <mxPoint x="1360" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DJybPEAwdVBZkWdXATLx-1" parent="1" style="shape=mxgraph.android.phone2;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#3B82F6;strokeWidth=2;fontSize=14;fontColor=#1E3A8A;" value="&lt;b&gt;IOS-приложени&lt;/b&gt;" vertex="1">
+          <mxGeometry height="150" width="130" x="1400" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="DJybPEAwdVBZkWdXATLx-5" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#3B82F6;strokeWidth=2;fontSize=12;fontColor=#1D4ED8;labelBackgroundColor=#EFF6FF;entryX=0.209;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.209;exitY=-0.009;exitDx=0;exitDy=0;exitPerimeter=0;" value="Токен">
+          <mxGeometry relative="1" x="-0.0465" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1260" y="565" />
+              <mxPoint x="1260" y="565" />
+            </Array>
+            <mxPoint x="1260" y="641" as="sourcePoint" />
+            <mxPoint x="1260" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DJybPEAwdVBZkWdXATLx-6" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#3B82F6;strokeWidth=2;fontSize=12;fontColor=#1D4ED8;labelBackgroundColor=#EFF6FF;entryX=0.209;entryY=0.989;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.667;exitY=0.031;exitDx=0;exitDy=0;exitPerimeter=0;" value="Токен">
+          <mxGeometry relative="1" x="-0.0465" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points" />
+            <mxPoint x="1500.0400000000004" y="726.48" as="sourcePoint" />
+            <mxPoint x="1500" y="554" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
